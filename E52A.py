@@ -1,11 +1,3 @@
-"""
-Espressif IDF
-
-Espressif IoT Development Framework for ESP32 MCU
-
-https://github.com/espressif/esp-idf
-"""
-
 import copy
 import json
 import subprocess
@@ -26,14 +18,14 @@ from platformio.util import get_systype
 from platformio.builder.tools.piolib import ProjectAsLibBuilder
 
 env = DefaultEnvironment()
-env.SConscript("_embed_files.py", exports="env")
+env.SConscript("_common.py", exports="env")
 
 platform = env.PioPlatform()
 board = env.BoardConfig()
 mcu = board.get("build.mcu", "esp32")
 idf_variant = mcu.lower()
 
-FRAMEWORK_DIR = platform.get_package_dir("E52")
+FRAMEWORK_DIR = platform.get_package_dir("E52A")
 TOOLCHAIN_DIR = platform.get_package_dir(
     "toolchain-xtensa%s" % ("32s2" if mcu == "esp32s2" else "32")
 )
@@ -815,7 +807,7 @@ def create_version_file():
     version_file = os.path.join(FRAMEWORK_DIR, "version.txt")
     if not os.path.isfile(version_file):
         with open(version_file, "w") as fp:
-            fp.write(platform.get_package_version("E52"))
+            fp.write(platform.get_package_version("E52A"))
 
 
 def generate_empty_partition_image(binary_path, image_size):
