@@ -1,0 +1,37 @@
+{
+    "type":"SoC",
+    "name":"BF5885AM64",
+    "title": "BYD BF5885AM64 SoC",
+    "description":"BYD DoorLock SoC",
+    "Core": {
+        "CoreNum": 1,
+        "Core":"Cortex-M0",
+        "Fmax":48,
+        "DMIPS": 60,
+        "CoreMark": 85
+    },
+    "manufacturer": {
+        "vendor":"BYD",
+        "homepage":"http://www.bydmicro.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/SoCXin/BF5885AM64.git"
+    },
+    "version":"1.0.0",
+    "series":["BF5885AM64"],
+    "package":["QFN48"],
+    "peripheral": ["ADC","UART","SPI","IIC"],
+    "temp": [-40,125],
+    "volt": [2.5,5.5],
+    "ESD": {
+        "HBM": 4000,
+        "CDM": 500
+    },
+    "keywords": [
+        "Cortex-M0",
+        "BYD",
+        "ADC","I2C","RFID","SPI","UART"
+    ]
+}
+
